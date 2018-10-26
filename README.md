@@ -13,6 +13,21 @@ checkBinary() {
 checkBinary brew
 ```
 
+```shell
+function buildTestContainer() {
+	docker build -t golang-template-repo:latest - <<EOF
+FROM golang:1.11.1
+RUN apt update -y \ 
+    && apt install -y \
+       locales \
+       wget \
+       make \
+       git \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+EOF
+}
+```
+
 color
 ```shell
 RESTORE=$(echo -en '\033[0m')
