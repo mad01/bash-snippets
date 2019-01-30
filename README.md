@@ -52,3 +52,12 @@ WHITE=$(echo -en '\033[01;37m')
 echo ${RED}RED${GREEN}GREEN${YELLOW}YELLOW${BLUE}BLUE${PURPLE}PURPLE${CYAN}CYAN${WHITE}WHITE${RESTORE}
 
 ```
+
+Check if array is empty
+```shell
+if [ ${#errors[@]} -eq 0 ]; then
+    echo "No errors, hooray"
+else
+    echo "Oops, something went wrong..."
+fi
+```
